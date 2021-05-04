@@ -1,0 +1,20 @@
+
+
+-----libraries------
+flask 
+sklearn
+
+
+to install them run these commands in the cmd : 
+
+1)
+pip install flask
+
+2)
+pip install sklearn
+
+----how to run the project ----
+1) cd into the folder with the cmd 
+2) type in the cmd :                python app.py
+3) open your browser and type :     127.0.0.1:5000
+

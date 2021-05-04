@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Animated Login</title>
+
+    
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #43345e;
+        background-repeat: no-repeat;
+      }
+      .box {
+        width: 300px;
+        padding: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #171717;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .box h1 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .box input[type="text"],
+      .box input[type="password"] {
+        border: 0px;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+      }
+
+      .box input[type="text"]:focus,
+      .box input[type="password"]:focus {
+        width: 250px;
+        border-color: green;
+      }
+
+      .box input[type="submit"] {
+        border: 0px;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid green;
+        padding: 14px 40px;
+        width: 150px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+
+      .box input[type="submit"]:hover {
+        background: green;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <form method="POST" class="box" action="/" method="post">
+      <h1>predict</h1>
+      <input type="text" name="sepal_length" placeholder="sepal_length" required type="number" step="any"/>
+      <input type="text" name="sepal_width" placeholder="sepal_width" required type="number" step="any"/>
+      <input type="text" name="petal_length" placeholder="petal_length" required type="number" step="any"/>
+      <input type="text" name="petal_width" placeholder="petal_width" required type="number" step="any"/>
+      <a href="{{ url_for('intro') }}" method="POSt" action="submit">
+        
+        <input type="submit" name="Login" value="predict" />
+      </a>
+
+      {% if pred %}
+      <p style="color:#3498db">predicted type : {{ pred }}</p>
+      <p style="color:#3498db">with probability : {{ proba }}</p>
+      {% endif %}
+    </form>
+
+    
+
+    <script src="{{ url_for('static', filename='javascript.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquerry.js') }}"></script>
+  </body>
+</html>
